@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Side Income Playbook — Free Ebook</title>
+<meta name="description" content="A 96-page playbook covering 7 beginner-friendly side hustles, with exact steps, tools, and realistic earnings. Free download for a limited time.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --canvas:#FBFBFA;
+    --surface:#FFFFFF;
+    --surface-alt:#F7F6F3;
+    --border:#EAEAEA;
+    --text:#111111;
+    --secondary:#787774;
+    --green-bg:#EDF3EC;  --green-tx:#346538;
+    --yellow-bg:#FBF3DB; --yellow-tx:#956400;
+    --blue-bg:#E1F3FE;   --blue-tx:#1F6C9F;
+    --radius:8px;
+    --serif:'Newsreader',Georgia,serif;
+    --sans:'Geist','Helvetica Neue',sans-serif;
+    --mono:'Geist Mono',monospace;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:var(--canvas);color:var(--text);font-family:var(--sans);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+  ::selection{background:var(--yellow-bg)}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+
+  /* ambient depth */
+  .ambient{position:fixed;inset:0;pointer-events:none;z-index:0;background:
+    radial-gradient(600px 400px at 85% -5%, rgba(149,100,0,.03), transparent 70%),
+    radial-gradient(500px 380px at -10% 40%, rgba(52,101,56,.03), transparent 70%);}
+
+  /* ---------- NAV ---------- */
+  nav{position:sticky;top:0;z-index:50;background:rgba(251,251,250,.88);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .brand{font-family:var(--mono);font-size:13px;font-weight:500;letter-spacing:.04em;text-transform:uppercase}
+  .nav-cta{background:#111;color:#fff;font-family:var(--sans);font-weight:500;font-size:14px;padding:9px 18px;border-radius:6px;border:none;cursor:pointer;transition:transform .12s ease,background .15s ease}
+  .nav-cta:hover{background:#333}
+  .nav-cta:active{transform:scale(.98)}
+
+  /* ---------- HERO ---------- */
+  .hero{padding:110px 0 120px;position:relative;z-index:1}
+  .hero-grid{display:grid;grid-template-columns:1fr 340px;gap:80px;align-items:start}
+  .tagline{font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--secondary);margin-bottom:26px}
+  h1{font-family:var(--serif);font-weight:500;font-size:clamp(42px,5.4vw,66px);line-height:1.06;letter-spacing:-0.03em;margin-bottom:26px}
+  h1 em{font-style:italic}
+  .sub{color:var(--secondary);font-size:17.5px;line-height:1.65;max-width:50ch;margin-bottom:36px}
+  .sub strong{color:var(--text);font-weight:500}
+  .btn-primary{display:inline-block;background:#111;color:#fff;font-family:var(--sans);font-weight:500;font-size:15.5px;padding:15px 30px;border-radius:6px;border:none;cursor:pointer;transition:transform .12s ease,background .15s ease}
+  .btn-primary:hover{background:#333}
+  .btn-primary:active{transform:scale(.98)}
+  .hero-meta{display:flex;gap:20px;margin-top:22px;font-family:var(--mono);font-size:12px;color:var(--secondary);flex-wrap:wrap}
+  .hero-meta span::before{content:"— ";color:var(--border)}
+
+  /* book */
+  .book-col{position:relative;padding-top:12px}
+  .book-col::before{content:"";position:absolute;top:34px;left:-26px;width:78%;height:70%;background:var(--yellow-bg);border-radius:6px;transform:rotate(-3deg);z-index:0}
+  .book{position:relative;z-index:1;aspect-ratio:2/3;background:var(--surface);border:1px solid var(--border);border-radius:4px;padding:34px 28px;display:flex;flex-direction:column;justify-content:space-between;box-shadow:
+    3px 3px 0 #fff, 4px 4px 0 var(--border),
+    6px 6px 0 #fff, 7px 7px 0 var(--border),
+    9px 9px 0 #fff, 10px 10px 0 var(--border),
+    22px 34px 60px rgba(0,0,0,.07);transition:transform .4s cubic-bezier(.16,1,.3,1)}
+  .book:hover{transform:translateY(-4px)}
+  .bc-tag{align-self:flex-start;font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;background:var(--green-bg);color:var(--green-tx);padding:4px 10px;border-radius:9999px}
+  .bc-title{font-family:var(--serif);font-weight:500;font-size:37px;line-height:1.08;letter-spacing:-0.025em;margin-top:26px}
+  .bc-sub{font-family:var(--serif);font-style:italic;font-size:14.5px;line-height:1.45;color:var(--secondary);margin-top:14px;max-width:24ch}
+  .bc-rule{width:36px;height:1px;background:#D8D6D1;margin-top:auto}
+  .bc-foot{display:flex;justify-content:space-between;font-family:var(--mono);font-size:10.5px;color:var(--secondary)}
+  .book-note{margin-top:22px;font-family:var(--mono);font-size:11.5px;color:var(--secondary);display:flex;justify-content:space-between;border-top:1px solid var(--border);padding-top:14px}
+
+  /* ---------- STATS STRIP ---------- */
+  .stats{border-top:1px solid var(--border);border-bottom:1px solid var(--border);position:relative;z-index:1}
+  .stats-grid{display:grid;grid-template-columns:repeat(3,1fr)}
+  .stat{padding:34px 28px;border-left:1px solid var(--border)}
+  .stat:first-child{border-left:none}
+  .stat b{display:block;font-family:var(--mono);font-weight:500;font-size:26px;margin-bottom:2px}
+  .stat span{font-size:13.5px;color:var(--secondary)}
+  #dl-count{color:var(--green-tx)}
+
+  /* ---------- SECTIONS ---------- */
+  section{padding:120px 0;position:relative;z-index:1}
+  h2{font-family:var(--serif);font-weight:500;font-size:clamp(30px,3.6vw,44px);letter-spacing:-0.025em;line-height:1.12;margin-bottom:16px}
+  .sec-head p{color:var(--secondary);font-size:16.5px;max-width:58ch}
+  .sec-head{max-width:60ch;margin-bottom:56px}
+
+  /* preview pages */
+  .previews{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-bottom:64px}
+  .preview{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;transition:box-shadow .25s ease}
+  .preview:hover{box-shadow:0 2px 12px rgba(0,0,0,.05)}
+  .pv-body{padding:22px 18px;display:flex;flex-direction:column;gap:9px;min-height:190px}
+  .pv-body i{display:block;height:5px;border-radius:3px;background:#ECECEA}
+  .pv-body i:first-child{width:48%;height:9px;background:#DDDAD5}
+  .pv-body i:nth-child(2n){width:90%}
+  .pv-body i:nth-child(3n){width:74%}
+  .pv-foot{border-top:1px solid var(--border);padding:12px 18px;font-family:var(--mono);font-size:11px;color:var(--secondary)}
+
+  /* chapters — grouped chunks */
+  .ch-group + .ch-group{margin-top:56px}
+  .ch-label{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--secondary);padding-bottom:14px;border-bottom:1px solid var(--border);margin-bottom:4px}
+  .chapter{display:grid;grid-template-columns:56px 1fr auto;gap:20px;align-items:baseline;padding:22px 4px;border-bottom:1px solid var(--border)}
+  .ch-num{font-family:var(--mono);font-size:12.5px;color:var(--secondary)}
+  .ch-title{font-weight:600;font-size:16.5px;letter-spacing:-0.01em}
+  .ch-desc{color:var(--secondary);font-size:14.5px;margin-top:3px;max-width:56ch}
+  .pages{font-family:var(--mono);font-size:11.5px;color:var(--secondary);white-space:nowrap}
+
+  /* testimonials — flat divide rows, no cards */
+  .quote-row{display:grid;grid-template-columns:220px 1fr;gap:32px;padding:36px 4px;border-bottom:1px solid var(--border)}
+  .quote-who b{display:block;font-size:14.5px;font-weight:600}
+  .quote-who span{font-family:var(--mono);font-size:11.5px;color:var(--secondary)}
+  .stars{font-family:var(--mono);font-size:11px;color:var(--yellow-tx);letter-spacing:.15em;margin-bottom:8px}
+  .quote-row p{font-family:var(--serif);font-style:italic;font-size:19px;line-height:1.5;letter-spacing:-0.01em;max-width:62ch}
+
+  /* ---------- GATEWAY ---------- */
+  .gate{background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+  .gate-inner{display:grid;grid-template-columns:1fr 360px;gap:80px;align-items:start}
+  .gate-list{list-style:none;display:flex;flex-direction:column;margin-top:32px}
+  .gate-list li{display:flex;gap:14px;font-size:15.5px;padding:14px 4px;border-bottom:1px solid var(--border)}
+  .gate-list li:first-child{border-top:1px solid var(--border)}
+  .tick{flex:0 0 18px;height:18px;border-radius:9999px;background:var(--green-bg);color:var(--green-tx);display:inline-flex;align-items:center;justify-content:center;font-size:10px;font-weight:600;margin-top:4px}
+  .timer-card{background:var(--canvas);border:1px solid var(--border);border-radius:12px;padding:36px 30px;text-align:left}
+  .timer-label{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--yellow-tx)}
+  #countdown{font-family:var(--mono);font-weight:500;font-size:40px;margin:12px 0 6px;font-variant-numeric:tabular-nums}
+  .timer-sub{font-size:13.5px;color:var(--secondary);margin-bottom:26px;line-height:1.55}
+  .timer-card .btn-primary{width:100%;text-align:center}
+  .secure{margin-top:16px;font-family:var(--mono);font-size:11px;color:var(--secondary)}
+
+  /* ---------- FAQ ---------- */
+  details{border-bottom:1px solid var(--border)}
+  summary{cursor:pointer;list-style:none;padding:22px 4px;font-weight:500;font-size:16px;display:flex;justify-content:space-between;align-items:center;gap:16px}
+  summary::-webkit-details-marker{display:none}
+  summary::after{content:"+";font-family:var(--mono);font-size:18px;font-weight:400;color:var(--secondary)}
+  details[open] summary::after{content:"−"}
+  details p{color:var(--secondary);font-size:15px;padding:0 4px 24px;max-width:60ch}
+
+  /* footer */
+  footer{border-top:1px solid var(--border);padding:40px 0;font-family:var(--mono);font-size:11.5px;color:var(--secondary)}
+  .foot{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+  /* ---------- STICKY MOBILE BAR ---------- */
+  .sticky-bar{display:none;position:fixed;left:0;right:0;bottom:0;z-index:60;background:rgba(251,251,250,.95);backdrop-filter:blur(10px);border-top:1px solid var(--border);padding:12px 16px calc(12px + env(safe-area-inset-bottom))}
+  .sticky-bar button{width:100%;text-align:center}
+
+  /* ---------- LOCKER MODAL ---------- */
+  .overlay{display:none;position:fixed;inset:0;z-index:100;background:rgba(17,17,17,.4);backdrop-filter:blur(4px);align-items:center;justify-content:center;padding:20px}
+  .overlay.open{display:flex}
+  .locker{background:var(--surface);border:1px solid var(--border);border-radius:12px;max-width:500px;width:100%;padding:38px 32px;position:relative;max-height:90vh;overflow:auto;box-shadow:0 8px 40px rgba(0,0,0,.08)}
+  .locker-close{position:absolute;top:16px;right:18px;background:none;border:none;color:var(--secondary);font-family:var(--mono);font-size:18px;cursor:pointer;line-height:1}
+  .locker h3{font-family:var(--serif);font-weight:500;font-size:27px;letter-spacing:-0.02em;margin-bottom:10px}
+  .locker > p{color:var(--secondary);font-size:14.5px;margin-bottom:26px}
+  .offer{display:flex;align-items:center;gap:16px;width:100%;border:1px solid var(--border);background:var(--surface);border-radius:var(--radius);padding:16px 18px;margin-bottom:12px;cursor:pointer;transition:border-color .15s ease,box-shadow .2s ease;text-align:left;color:var(--text);font-family:var(--sans)}
+  .offer:hover{border-color:#D5D5D2;box-shadow:0 2px 10px rgba(0,0,0,.05)}
+  .offer:active{transform:scale(.99)}
+  .offer-letter{flex:0 0 40px;height:40px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-weight:500;font-size:15px}
+  .ol-green{background:var(--green-bg);color:var(--green-tx)}
+  .ol-blue{background:var(--blue-bg);color:var(--blue-tx)}
+  .ol-yellow{background:var(--yellow-bg);color:var(--yellow-tx)}
+  .offer b{display:block;font-size:14.5px;font-weight:600;letter-spacing:-0.01em}
+  .offer-meta{display:flex;gap:12px;margin-top:3px;font-family:var(--mono);font-size:11px;color:var(--secondary)}
+  .pill{font-family:var(--mono);font-size:9.5px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--green-tx);background:var(--green-bg);border-radius:9999px;padding:3px 10px;margin-left:auto;white-space:nowrap}
+
+  /* ---------- CLAIM NOTIFICATIONS ---------- */
+  .claim-toast{position:fixed;left:20px;bottom:20px;z-index:80;display:flex;align-items:center;gap:14px;background:#1E4630;border:1px solid #2E6247;border-radius:10px;padding:14px 18px 14px 14px;box-shadow:0 8px 28px rgba(30,70,48,.35);max-width:360px;color:#F0F7F1;opacity:0;transform:translateY(12px);transition:opacity .45s cubic-bezier(.16,1,.3,1),transform .45s cubic-bezier(.16,1,.3,1);pointer-events:none}
+  .claim-toast.show{opacity:1;transform:none}
+  .ct-avatar{flex:0 0 38px;width:38px;height:38px;border-radius:9999px;background:#EDF3EC;color:#346538;display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:12px;font-weight:500}
+  .ct-body b{display:block;font-size:13.5px;font-weight:600;letter-spacing:-0.01em;color:#FFFFFF}
+  .ct-body span{font-family:var(--mono);font-size:11px;color:#A8CDB4}
+  .ct-dot{width:8px;height:8px;border-radius:50%;background:#5BD08A;margin-left:auto;flex:0 0 8px;animation:pulse-dot 1.6s ease-in-out infinite}
+  @keyframes pulse-dot{0%,100%{box-shadow:0 0 0 0 rgba(91,208,138,.45)}55%{box-shadow:0 0 0 7px rgba(91,208,138,0)}}
+
+  /* ---------- LOCKER EMAIL STEP ---------- */
+  #locker-step-email h3{margin-bottom:10px}
+  .email-label{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--secondary);margin-bottom:8px}
+  .email-input{width:100%;background:var(--canvas);border:1px solid var(--border);border-radius:6px;padding:13px 14px;font-family:var(--sans);font-size:15px;color:var(--text);outline:none;transition:border-color .15s ease}
+  .email-input:focus{border-color:#B9B9B5}
+  .email-input.error{border-color:#C96A67}
+  .email-error{display:none;color:#9F2F2D;font-size:13px;margin-top:8px}
+  .email-error.show{display:block}
+  #locker-step-email .btn-primary{width:100%;margin-top:16px;text-align:center}
+  .email-note{margin-top:14px;font-family:var(--mono);font-size:11px;color:var(--secondary)}
+  .sent-banner{display:none;font-family:var(--mono);font-size:11.5px;background:var(--green-bg);color:var(--green-tx);border-radius:6px;padding:10px 14px;margin-bottom:22px;line-height:1.5}
+  .sent-banner.show{display:block}
+
+  /* ---------- SCROLL REVEAL ---------- */
+  .reveal{opacity:0;transform:translateY(12px);transition:opacity .6s cubic-bezier(.16,1,.3,1),transform .6s cubic-bezier(.16,1,.3,1);transition-delay:calc(var(--i,0)*80ms)}
+  .reveal.in{opacity:1;transform:none}
+
+  /* ---------- RESPONSIVE ---------- */
+  @media(max-width:900px){
+    .hero{padding:56px 0 72px}
+    .hero-grid{grid-template-columns:1fr;gap:48px}
+    .book-col{max-width:280px;margin:0 auto;width:100%}
+    section{padding:80px 0}
+    .stats-grid{grid-template-columns:1fr}
+    .stat{border-left:none;border-top:1px solid var(--border)}
+    .stat:first-child{border-top:none}
+    .previews{grid-template-columns:1fr 1fr;gap:14px}
+    .pv-body{min-height:150px;padding:16px 14px}
+    .gate-inner{grid-template-columns:1fr;gap:44px}
+    .chapter{grid-template-columns:40px 1fr;row-gap:2px;padding:18px 4px}
+    .pages{grid-column:2}
+    .quote-row{grid-template-columns:1fr;gap:12px;padding:28px 4px}
+    .quote-row p{font-size:17.5px}
+    body{padding-bottom:76px}
+    .sticky-bar{display:block}
+    .nav-cta{display:none}
+    .claim-toast{top:74px;bottom:auto;left:12px;right:12px;max-width:none}
+  }
+  /* small phones */
+  @media(max-width:480px){
+    .wrap{padding:0 20px}
+    .hero{padding:44px 0 60px}
+    h1{font-size:36px}
+    .sub{font-size:16px}
+    .hero .btn-primary,.sticky-bar button{width:100%;text-align:center}
+    .hero-meta{gap:12px;font-size:11px}
+    .stat{padding:24px 20px}
+    .stat b{font-size:22px}
+    .previews{grid-template-columns:1fr 1fr;gap:10px}
+    .pv-foot{font-size:10px;padding:10px 12px}
+    .ch-title{font-size:15.5px}
+    .timer-card{padding:26px 22px}
+    #countdown{font-size:32px}
+    .locker{padding:28px 20px}
+    .offer{padding:13px 14px;gap:12px}
+    .offer-letter{flex-basis:36px;width:36px;height:36px}
+    .pill{display:none}
+    .claim-toast{top:74px;bottom:auto;left:12px;right:12px;max-width:none}
+    footer{padding:30px 0}
+  }
+  @media(prefers-reduced-motion:reduce){
+    .reveal{opacity:1;transform:none;transition:none}
+    html{scroll-behavior:auto}
+  }
+</style>
+</head>
+<body>
+
+<div class="ambient" aria-hidden="true"></div>
+
+<nav>
+  <div class="wrap nav-inner">
+    <span class="brand">Side Income Press</span>
+    <button class="nav-cta" onclick="openLocker()">Get the ebook</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div class="reveal">
+      <p class="tagline">Free ebook · 2026 edition · normally $29</p>
+      <h1>Start your first online income in <em>fourteen days.</em></h1>
+      <p class="sub">A 96-page playbook covering <strong>seven beginner-friendly side hustles</strong>, each with exact steps, startup costs, and realistic monthly earnings. No audience required.</p>
+      <button class="btn-primary" onclick="openLocker()">Download free copy</button>
+      <div class="hero-meta"><span>Instant PDF</span><span>Delivered by email</span><span>12,400+ downloads</span></div>
+    </div>
+
+    <div class="book-col reveal" style="--i:2">
+      <div class="book">
+        <span class="bc-tag">The Playbook Series</span>
+        <div>
+          <div class="bc-title">The Side Income Playbook</div>
+          <p class="bc-sub">Seven proven methods to start earning online — with exact steps and realistic numbers.</p>
+        </div>
+        <div>
+          <div class="bc-rule"></div>
+          <div class="bc-foot" style="margin-top:12px"><span>Side Income Press</span><span>2026 Ed.</span></div>
+        </div>
+      </div>
+      <div class="book-note"><span>Vol. 01</span><span>$29 → $0 today</span></div>
+    </div>
+  </div>
+</header>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="wrap stats-grid">
+    <div class="stat reveal"><b id="dl-count">12,437</b><span>copies downloaded</span></div>
+    <div class="stat reveal" style="--i:1"><b>4.8 / 5</b><span>average reader rating</span></div>
+    <div class="stat reveal" style="--i:2"><b>7</b><span>step-by-step methods inside</span></div>
+  </div>
+</div>
+
+<!-- INSIDE -->
+<section id="inside">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2>A look inside</h2>
+      <p>Every method comes with what it costs to start, how long until first earnings, and a checklist you can follow the same day.</p>
+    </div>
+
+    <div class="previews">
+      <div class="preview reveal"><div class="pv-body"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="pv-foot">p.12 · Method scorecard</div></div>
+      <div class="preview reveal" style="--i:1"><div class="pv-body"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="pv-foot">p.31 · Pricing worksheet</div></div>
+      <div class="preview reveal" style="--i:2"><div class="pv-body"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="pv-foot">p.54 · First-client scripts</div></div>
+      <div class="preview reveal" style="--i:3"><div class="pv-body"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="pv-foot">p.78 · 30-day action plan</div></div>
+    </div>
+
+    <div class="ch-group reveal">
+      <div class="ch-label">Part one — get moving this week</div>
+      <div class="chapter">
+        <span class="ch-num">CH 01</span>
+        <div><div class="ch-title">Freelance skills you already have</div><p class="ch-desc">Turn existing skills into paid gigs within one week. Includes a rate-setting cheat sheet.</p></div>
+        <span class="pages">14 pp</span>
+      </div>
+      <div class="chapter">
+        <span class="ch-num">CH 02</span>
+        <div><div class="ch-title">Print-on-demand without inventory</div><p class="ch-desc">Design-to-profit workflow using free tools. Realistic earnings: $200–800/mo.</p></div>
+        <span class="pages">12 pp</span>
+      </div>
+      <div class="chapter">
+        <span class="ch-num">CH 03</span>
+        <div><div class="ch-title">Digital products that sell themselves</div><p class="ch-desc">Templates, planners, and guides — plus the three platforms worth starting on.</p></div>
+        <span class="pages">16 pp</span>
+      </div>
+    </div>
+
+    <div class="ch-group reveal">
+      <div class="ch-label">Part two — build steady income</div>
+      <div class="chapter">
+        <span class="ch-num">CH 04</span>
+        <div><div class="ch-title">Local services, online systems</div><p class="ch-desc">Boring-but-lucrative services businesses pay $300+ for, delivered remotely.</p></div>
+        <span class="pages">13 pp</span>
+      </div>
+      <div class="chapter">
+        <span class="ch-num">CH 05</span>
+        <div><div class="ch-title">Affiliate content that ranks</div><p class="ch-desc">A repeatable framework for review content that works without a large audience.</p></div>
+        <span class="pages">15 pp</span>
+      </div>
+      <div class="chapter">
+        <span class="ch-num">CH 06</span>
+        <div><div class="ch-title">Flipping: buy low, sell fast</div><p class="ch-desc">The five product categories with the fastest resale margins for beginners.</p></div>
+        <span class="pages">12 pp</span>
+      </div>
+      <div class="chapter">
+        <span class="ch-num">CH 07</span>
+        <div><div class="ch-title">Your first $1,000 roadmap</div><p class="ch-desc">Pick one method and follow the combined 30-day calendar to your first thousand.</p></div>
+        <span class="pages">14 pp</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section style="background:var(--surface-alt)">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2>What readers say</h2>
+    </div>
+    <div class="quote-row reveal">
+      <div class="quote-who"><b>Marcus K.</b><span>Downloaded in March</span></div>
+      <div><div class="stars">★★★★★</div><p>"Followed chapter two exactly as written. Made my first print-on-demand sale on day nine. The pricing worksheet alone saved me weeks of guessing."</p></div>
+    </div>
+    <div class="quote-row reveal">
+      <div class="quote-who"><b>Dana R.</b><span>Side hustler, part-time</span></div>
+      <div><div class="stars">★★★★★</div><p>"I've bought courses at ten times this price that said half as much. It reads like a checklist, not motivation fluff."</p></div>
+    </div>
+    <div class="quote-row reveal">
+      <div class="quote-who"><b>Jonah T.</b><span>Verified reader</span></div>
+      <div><div class="stars">★★★★☆</div><p>"Chapter six got me started flipping. Small wins so far, but the buy-price tables are genuinely useful."</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- GATEWAY -->
+<section class="gate" id="download">
+  <div class="wrap gate-inner">
+    <div class="reveal">
+      <h2>Ready to grab your copy?</h2>
+      <p style="color:var(--secondary);font-size:16.5px;max-width:52ch;margin-top:8px">Enter your email, complete one quick verification from our partners, and the PDF lands in your inbox instantly.</p>
+      <ul class="gate-list">
+        <li><span class="tick">&#10003;</span>Full 96-page PDF, no watermarks or upsells</li>
+        <li><span class="tick">&#10003;</span>Takes less than two minutes to complete</li>
+        <li><span class="tick">&#10003;</span>Works on phone, tablet, and desktop</li>
+        <li><span class="tick">&#10003;</span>Your data is never shared with anyone</li>
+      </ul>
+    </div>
+    <div class="timer-card reveal" style="--i:1">
+      <div class="timer-label">Free access ends in</div>
+      <div id="countdown">--:--:--</div>
+      <p class="timer-sub">After the timer hits zero the price returns to $29.</p>
+      <button class="btn-primary" onclick="openLocker()">Unlock my download</button>
+      <p class="secure">Secure verification · No credit card needed</p>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section>
+  <div class="wrap" style="max-width:720px">
+    <div class="sec-head reveal">
+      <h2>Common questions</h2>
+    </div>
+    <details open class="reveal">
+      <summary>Is this really free?</summary>
+      <p>Yes. Instead of charging $29, we ask you to complete one quick offer from a partner — that covers the cost of giving the book away. No card is required.</p>
+    </details>
+    <details class="reveal">
+      <summary>Why do I need to complete a verification?</summary>
+      <p>It prevents automated bots from mass-downloading the file and keeps the giveaway available for real readers. Most offers finish in under two minutes.</p>
+    </details>
+    <details class="reveal">
+      <summary>What format is the ebook?</summary>
+      <p>A standard PDF that works on any device. Read it in any browser or transfer it to your phone, tablet, or e-reader.</p>
+    </details>
+    <details class="reveal">
+      <summary>I'm a total beginner. Will this work for me?</summary>
+      <p>The playbook was written specifically for beginners. Every method includes what it costs to start, how long until first earnings, and a same-day checklist.</p>
+    </details>
+    <details class="reveal">
+      <summary>How long does the free period last?</summary>
+      <p>The countdown above shows exactly when free access closes. After that the price returns to $29 with no exceptions.</p>
+    </details>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot">
+    <span>© 2026 Side Income Press</span>
+    <span><a href="#">Privacy</a>&nbsp;&nbsp;/&nbsp;&nbsp;<a href="#">Terms</a>&nbsp;&nbsp;/&nbsp;&nbsp;<a href="#">Contact</a></span>
+  </div>
+</footer>
+
+<!-- STICKY MOBILE CTA -->
+<div class="sticky-bar">
+  <button class="btn-primary" onclick="openLocker()">Download free copy</button>
+</div>
+
+<!-- CLAIM NOTIFICATION -->
+<div class="claim-toast" id="claim-toast" aria-hidden="true">
+  <span class="ct-avatar" id="ct-avatar">MK</span>
+  <div class="ct-body"><b id="ct-name">Marcus K.</b><span id="ct-meta">Austin, TX · just now</span></div>
+  <span class="ct-dot"></span>
+</div>
+
+<!-- CONTENT LOCKER MODAL -->
+<div class="overlay" id="locker-overlay" role="dialog" aria-modal="true" aria-label="Complete verification to download">
+  <div class="locker">
+
+    <!-- STEP 1: EMAIL (required to receive the ebook) -->
+    <div id="locker-step-email">
+      <button class="locker-close" onclick="closeLocker()" aria-label="Close">×</button>
+      <h3>Where should we send your copy?</h3>
+      <p>Enter your email and we'll deliver the PDF instantly after a quick verification. This also reserves your free copy before the timer runs out.</p>
+      <form onsubmit="return submitEmail(event)" novalidate>
+        <label class="email-label" for="ebook-email">Your email address</label>
+        <input class="email-input" type="email" id="ebook-email" name="email" placeholder="you@example.com" autocomplete="email" required>
+        <p class="email-error" id="email-error">Please enter a valid email address — the ebook is delivered by email.</p>
+        <button class="btn-primary" type="submit">Continue to download</button>
+      </form>
+      <p class="email-note">No spam. Your email is used only to deliver the ebook.</p>
+    </div>
+
+    <!-- STEP 2: OFFERS (shown after valid email) -->
+    <div id="locker-step-offers" style="display:none">
+      <button class="locker-close" onclick="closeLocker()" aria-label="Close">×</button>
+      <h3>One quick step left</h3>
+      <p>Choose any offer below to verify you're human. We'll send the ebook to your inbox immediately after completion.</p>
+      <div class="sent-banner show" id="sent-banner"></div></p>
+
+    <!-- ============================================================
+         CPA INTEGRATION POINT
+         Option A (hosted locker): delete the .offer buttons below and
+         replace this block with your network's locker iframe/script.
+           - OGAds:   include locker.js then call og_load()
+           - CPAGrip: paste your Content Locker widget snippet here
+           - CPABuild: iframe their locker URL or use their JS API
+         Option B (custom): wire each .offer button's startOffer() call
+         to your network's individual offer URLs, then call unlock()
+         from the network's postback/completion callback.
+         ============================================================ -->
+    <button class="offer" onclick="startOffer('App Install')">
+      <span class="offer-letter ol-green">A</span>
+      <span><b>Install &amp; open an app for 30 seconds</b>
+        <span class="offer-meta"><span>~1 min</span><span>Mobile only</span></span></span>
+      <span class="pill">Recommended</span>
+    </button>
+    <button class="offer" onclick="startOffer('Short Survey')">
+      <span class="offer-letter ol-blue">S</span>
+      <span><b>Answer a short five-question survey</b>
+        <span class="offer-meta"><span>~2 min</span><span>All devices</span></span></span>
+    </button>
+    <button class="offer" onclick="startOffer('Email Submit')">
+      <span class="offer-letter ol-yellow">E</span>
+      <span><b>Join a free newsletter trial</b>
+        <span class="offer-meta"><span>~40 sec</span><span>All devices</span></span></span>
+    </button>
+    <p class="secure" style="text-align:left">Verification is secure. Your information is never shared.</p>
+    </div><!-- /locker-step-offers -->
+  </div>
+</div>
+
+<script>
+  /* ---------- Locker controls ---------- */
+  var savedEmail = '';
+  function openLocker(){
+    /* If email already submitted this session, skip straight to offers */
+    document.getElementById('locker-step-email').style.display = savedEmail ? 'none' : 'block';
+    document.getElementById('locker-step-offers').style.display = savedEmail ? 'block' : 'none';
+    document.getElementById('locker-overlay').classList.add('open');
+    document.body.style.overflow='hidden';
+  }
+  function closeLocker(){ document.getElementById('locker-overlay').classList.remove('open'); document.body.style.overflow=''; }
+
+  /* ---------- Email step (required) ---------- */
+  function submitEmail(e){
+    e.preventDefault();
+    var input = document.getElementById('ebook-email');
+    var err = document.getElementById('email-error');
+    var valid = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(input.value.trim());
+    if(!valid){
+      input.classList.add('error'); err.classList.add('show'); input.focus();
+      return false;
+    }
+    input.classList.remove('error'); err.classList.remove('show');
+    savedEmail = input.value.trim();
+
+    /* TODO: send the lead to your auto responder / ESP here, e.g.
+       fetch('https://your-esp-api.com/subscribe', { method:'POST', body: JSON.stringify({ email: savedEmail }) }); */
+
+    document.getElementById('sent-banner').textContent = 'Copy reserved for ' + savedEmail + ' — complete one offer below and we\u2019ll deliver your PDF.';
+    document.getElementById('locker-step-email').style.display = 'none';
+    document.getElementById('locker-step-offers').style.display = 'block';
+    return false;
+  }
+  document.getElementById('ebook-email').addEventListener('input', function(){
+    this.classList.remove('error'); document.getElementById('email-error').classList.remove('show');
+  });
+
+  function startOffer(name){
+    /* Replace with real redirect to your CPA network offer URL, e.g.:
+       window.location.href = 'https://your-network.com/offer?id=123';
+       On completion callback, call unlock(); */
+    alert('Offer flow goes here (' + name + '). Wire this to your CPA network.');
+  }
+  function unlock(){
+    closeLocker();
+    window.location.href = '/thank-you.html';
+  }
+  document.getElementById('locker-overlay').addEventListener('click', function(e){ if(e.target === this) closeLocker(); });
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape') closeLocker(); });
+
+  /* ---------- Evergreen daily countdown (resets each midnight) ---------- */
+  function tick(){
+    var now = new Date();
+    var end = new Date(now); end.setHours(23,59,59,999);
+    var s = Math.floor((end - now)/1000);
+    document.getElementById('countdown').textContent =
+      String(Math.floor(s/3600)).padStart(2,'0') + ':' +
+      String(Math.floor(s%3600/60)).padStart(2,'0') + ':' +
+      String(s%60).padStart(2,'0');
+  }
+  tick(); setInterval(tick, 1000);
+
+  /* ---------- Live download counter ---------- */
+  var dl = 12437;
+  setInterval(function(){
+    if(Math.random() < 0.4) dl++;
+    document.getElementById('dl-count').textContent = dl.toLocaleString();
+  }, 9000);
+
+  /* ---------- Claim notifications ---------- */
+  var claimers = [
+    { n:'Marcus K.',  l:'Austin, TX' },
+    { n:'Dana R.',    l:'Portland, OR' },
+    { n:'Jonah T.',   l:'Manchester, UK' },
+    { n:'Priya S.',   l:'Toronto, CA' },
+    { n:'Leo M.',     l:'Berlin, DE' },
+    { n:'Sofia G.',   l:'Madrid, ES' },
+    { n:'Ethan W.',   l:'Sydney, AU' },
+    { n:'Amara O.',   l:'Lagos, NG' }
+  ];
+  var ctIdx = 0, ctTimer = null;
+  function initials(n){ return n.split(' ').map(function(p){ return p[0]; }).join('').toUpperCase(); }
+  function showClaim(){
+    var c = claimers[ctIdx % claimers.length]; ctIdx++;
+    var mins = Math.floor(Math.random()*9) + 1;
+    document.getElementById('ct-avatar').textContent = initials(c.n);
+    document.getElementById('ct-name').textContent = c.n + ' unlocked the playbook';
+    document.getElementById('ct-meta').textContent = c.l + ' · ' + (mins === 1 ? 'just now' : mins + ' min ago');
+    var t = document.getElementById('claim-toast');
+    t.classList.add('show');
+    clearTimeout(ctTimer);
+    ctTimer = setTimeout(function(){ t.classList.remove('show'); }, 5200);
+  }
+  function claimLoop(){
+    setTimeout(function(){ showClaim(); claimLoop(); }, 9000 + Math.random()*9000);
+  }
+  setTimeout(claimLoop, 4000);
+
+  /* ---------- Scroll reveal (IntersectionObserver) ---------- */
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); }
+    });
+  }, { threshold: 0.15 });
+  document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+</script>
+</body>
+</html>
